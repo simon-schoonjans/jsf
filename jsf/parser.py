@@ -320,7 +320,7 @@ class JSF:
         elif "oneOf" in schema:
             return self.__parse_oneOf(name, path, schema, root)
         else:
-            raise ValueError(f"Cannot parse schema {repr(schema)}")  # pragma: no cover
+            return Object()
 
     def _parse(self, schema: Dict[str, Any]) -> AllTypes:
         for def_tag in ("definitions", "$defs"):
